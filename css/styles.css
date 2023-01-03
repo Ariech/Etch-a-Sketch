@@ -1,0 +1,22 @@
+body {
+  background-color: #333;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell {
+  border: 1px solid black;
+  height: 20px;
+  width: 20px;
+  box-sizing: border-box;
+}
+
+.board {
+  display: grid;
+  background-color: #fff;
+  grid-template-columns: repeat(16, 20px);
+  grid-template-rows: repeat(16, 20px);
+}
