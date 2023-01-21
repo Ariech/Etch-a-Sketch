@@ -1,5 +1,5 @@
 body {
-  background-color: #333;
+  background-color: #858080;
   height: 100vh;
 
   display: flex;
@@ -7,22 +7,95 @@ body {
   align-items: center;
 }
 
-.cell {
-  box-sizing: border-box;
+/* Main container styles */
+
+.container {
+  display: flex;
+  gap: 50px;
 }
+
+/* Board styles */
 
 .board {
   display: grid;
   width: 700px;
   height: 700px;
-  margin-top: 50px;
-  margin-left: 50px;
-  border: 1px solid black;
+  border: 5px solid #fff;
+  border-radius: 5px;
+  box-shadow: 10px 10px;
+  background-color: #fff;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
 }
 
+.cell {
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+/* Menu styles */
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  gap: 10px;
+}
+
+/* Slider styles */
+
 .slider-container {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-grow: 1;
+  margin-bottom: 200px;
+  gap: 10px;
+}
+
+#slider {
+  -webkit-appearance: none;
+  background-color: #fff;
+  outline: none;
+  border-radius: 7px;
+}
+
+#slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #333;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+/* Reset button styles */
+
+.reset,
+.rgb {
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.value,
+.title {
+  font-size: 20px;
+}
+
+.value,
+.title {
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.title {
+  padding: 10px 20px;
+  box-sizing: content-box;
 }

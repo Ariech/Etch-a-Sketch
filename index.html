@@ -9,10 +9,17 @@
     <script src="./scripts.js" defer></script>
   </head>
   <body>
-    <div class="slider-container">
-      <input type="range" min="1" max="100" value="16" id="slider" />
-      <p class="value">16</p>
+    <div class="container">
+      <div class="menu-container">
+        <h1 class="title">Etch-A-Sketch</h1>
+        <div class="slider-container">
+          <button class="rgb">RGB</button>
+          <button class="reset">Reset</button>
+          <p class="value">16 x 16</p>
+          <input type="range" min="1" max="100" value="16" id="slider" />
+        </div>
+      </div>
+      <div class="board"></div>
     </div>
-    <div class="board"></div>
   </body>
 </html>

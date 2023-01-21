@@ -1,12 +1,15 @@
 const board = document.querySelector('.board');
 const cells = document.querySelectorAll('.cell');
+const resetButton = document.querySelector('.reset')
+
+let val = document.getElementById('slider').value;
 
 initGrid = () => {
     for(let i = 0; i < 256; i++) {
         const cell = document.createElement('div');
         cell.classList.toggle('cell');
         cell.addEventListener('mouseover', (e) => {
-        e.target.style.backgroundColor = 'white'
+        e.target.style.backgroundColor = 'black'
         })
         board.appendChild(cell);
 }
@@ -26,7 +29,7 @@ function createDivs(size) {
         cell.style.width = '700px / size'
         cell.style.height = '700px / size'
         cell.addEventListener('mouseover', (e) => {
-        e.target.style.backgroundColor = 'white'
+        e.target.style.backgroundColor = 'black'
         })
         board.appendChild(cell);
     }
@@ -42,9 +45,14 @@ const slider = document.querySelector('#slider')
 const textValue = document.querySelector('.value')
 
 slider.addEventListener('input', function() {
-    let val = document.getElementById('slider').value;
-    textValue.textContent = val;
+    val = document.getElementById('slider').value;
+    textValue.textContent = `${val} x ${val}`;
     newGridSize(val)
+})
+
+resetButton.addEventListener('click', () => {
+    clearBoard();
+    createDivs(val);
 })
 
 initGrid();
