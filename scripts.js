@@ -1,6 +1,9 @@
 const board = document.querySelector('.board');
 const cells = document.querySelectorAll('.cell');
-const resetButton = document.querySelector('.reset')
+const resetButton = document.querySelector('.reset');
+const rgbButton = document.querySelector('.rgb');
+const blackButton = document.querySelector('.black');
+const eraserButton = document.querySelector('.eraser');
 
 let val = document.getElementById('slider').value;
 
@@ -41,6 +44,11 @@ function clearBoard() {
     }
 }
 
+function createRandomColor() {
+    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    return `#${randomColor}`;
+}
+
 const slider = document.querySelector('#slider')
 const textValue = document.querySelector('.value')
 
@@ -54,5 +62,35 @@ resetButton.addEventListener('click', () => {
     clearBoard();
     createDivs(val);
 })
+
+rgbButton.addEventListener('click', function(){
+    let val = document.getElementById('slider').value;
+    let cells = board.children;
+    for (let i = 0; i < val*val; i++) {
+        cells[i].addEventListener('mouseover', function(event){
+            event.target.style.backgroundColor = createRandomColor();
+        })
+    }
+});
+
+blackButton.addEventListener('click', function(){
+    let val = document.getElementById('slider').value;
+    let cells = board.children;
+    for (let i = 0; i < val*val; i++) {
+        cells[i].addEventListener('mouseover', function(event){
+            event.target.style.backgroundColor = 'black';
+        })
+    }
+});
+
+eraserButton.addEventListener('click', function(){
+    let val = document.getElementById('slider').value;
+    let cells = board.children;
+    for (let i = 0; i < val*val; i++) {
+        cells[i].addEventListener('mouseover', function(event){
+            event.target.style.backgroundColor = 'white';
+        })
+    }
+});
 
 initGrid();

@@ -71,7 +71,9 @@ body {
 /* Reset button styles */
 
 .reset,
-.rgb {
+.rgb,
+.black,
+.eraser {
   width: 100%;
   background-color: #333;
   color: white;
